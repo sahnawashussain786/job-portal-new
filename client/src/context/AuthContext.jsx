@@ -11,7 +11,8 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Set base URL for axios
-  axios.defaults.baseURL = "http://localhost:5000/api";
+  axios.defaults.baseURL =
+    import.meta.env.VITE_API_URL || "http://localhost:5000/api";
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
